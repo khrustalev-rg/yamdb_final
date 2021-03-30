@@ -1,2 +1,2 @@
-# yamdb_final
-yamdb_final
+# api_yamdb
+api_yamdb

@@ -1,0 +1,5 @@
+.idea
+venv
+data
+fixture.json
+requirements.in
