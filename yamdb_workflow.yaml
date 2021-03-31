@@ -57,10 +57,7 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          rm -rf yamdb_final
-          git clone https://github.com/khrustalev-rg/yamdb_final.git
-          cd yamdb_final
-          sudo docker-compose down
+          cd ${{ secrets.COMPOSE_PATH }}
           sudo docker-compose up -d
 
   send_message:

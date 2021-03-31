@@ -18,4 +18,4 @@ media/
 
 db.sqlite3
 /sent_emails/
-/sent_emails/
+.env
