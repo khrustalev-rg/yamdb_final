@@ -28,7 +28,7 @@ class TokenObtainPairSerializer(serializers.Serializer):
         if dt.datetime.now(dt.timezone.utc) - UserCode.objects.get(
                 email=email).created >= dt.timedelta(minutes=720):
             raise serializers.ValidationError(
-                f"Your verification code is outdated.")
+                "Your verification code is outdated.")
         new_user = User.objects.get(email=email)
         refresh = self.get_token(new_user)
         data['refresh'] = str(refresh)

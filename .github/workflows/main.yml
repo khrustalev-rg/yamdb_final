@@ -1,4 +1,4 @@
-name: Flask-app workflow
+name: yamdb-final workflow
 
 on: [push]
 

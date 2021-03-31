@@ -29,4 +29,3 @@ class TitleAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Title, TitleAdmin)
-

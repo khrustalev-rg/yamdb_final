@@ -37,13 +37,12 @@ class UserCodeViewSet(CreateAPIView):
 
     @staticmethod
     def send_code(email, code):
-        send_mail(
-            f'Код доступа для регистрации на ресурсе YaMDB',
-            f'{code}',
-            EMAIL,
-            [f'{email}'],
-            fail_silently=False,
-        )
+        send_mail('Код доступа для регистрации на ресурсе YaMDB',
+                  f'{code}',
+                  EMAIL,
+                  [f'{email}'],
+                  fail_silently=False,
+                  )
 
 
 class UserTokenViewSet(TokenObtainPairView):
@@ -79,7 +78,7 @@ class UserViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated, IsAdmin,)
     lookup_field = 'username'
     filter_backends = (filters.SearchFilter,)
-    search_fields = ('username', )
+    search_fields = ('username',)
 
     @action(methods=('patch', 'get'), detail=False,
             permission_classes=(permissions.IsAuthenticated,),
@@ -127,7 +126,7 @@ class TitleViewSet(viewsets.ModelViewSet):
 
 class ReviewViewSet(viewsets.ModelViewSet):
     serializer_class = ReveiwSerializer
-    permission_classes = (IsStaffOrAuthorOrReadOnly, )
+    permission_classes = (IsStaffOrAuthorOrReadOnly,)
 
     def get_queryset(self):
         queryset = Review.objects.filter(title=self.get_title()).all()
