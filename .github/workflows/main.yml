@@ -56,11 +56,10 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        uses: actions/checkout@v2
         script: |
+          git clone https://github.com/khrustalev-rg/yamdb_final.git
+          cd yamdb_final
           ll
-          sudo docker-compose down -v
-          sudo docker-compose up -d
 
   send_message:
     runs-on: ubuntu-latest
