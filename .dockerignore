@@ -1,6 +1,9 @@
-.idea
-venv
-data
-fixture.json
-requirements.in
-yamdb_workflow.yaml
+**
+!api_yamdb
+!content_api
+!static
+!templates
+!users
+!fixtures.json
+!manage.py
+!requirements.txt
