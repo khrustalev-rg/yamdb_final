@@ -59,7 +59,8 @@ jobs:
         script: |
           git clone https://github.com/khrustalev-rg/yamdb_final.git
           cd yamdb_final
-          ls
+          sudo docker-compose down -v
+          sudo docker-compose up
 
   send_message:
     runs-on: ubuntu-latest
