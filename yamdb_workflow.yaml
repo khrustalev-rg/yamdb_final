@@ -57,9 +57,8 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo docker pull hrorel/yamdb_final
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 80:80 hrorel/yamdb_final
+          sudo docker-compose down -v
+          sudo docker-compose up -d
 
   send_message:
     runs-on: ubuntu-latest
