@@ -10,6 +10,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env
+
   app:
     image: hrorel/yamdb_final:latest
     restart: unless-stopped
