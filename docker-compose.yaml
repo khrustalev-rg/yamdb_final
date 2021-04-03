@@ -15,7 +15,7 @@ services:
     image: hrorel/yamdb_final:latest
     restart: unless-stopped
     volumes:
-      - ./static:/code/static
+      - ./static:/code/statics
       - ./media:/code/media
     depends_on:
       - db
@@ -23,6 +23,8 @@ services:
       - ./.env
     environment:
       WAIT_HOSTS: db:5432
+    ports:
+      - "8000:8000"
 
   web:
     image: nginx:alpine
